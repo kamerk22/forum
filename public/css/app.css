@@ -12949,6 +12949,21 @@ a.text-dark:hover {
   margin-right: 30px;
 }
 
+#main .fab {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: #3097D1;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  border: none;
+  color: #fff;
+  -webkit-box-shadow: 0 15px 35px rgba(48, 151, 209, 0.1), 0 5px 15px rgba(48, 151, 209, 0.07);
+          box-shadow: 0 15px 35px rgba(48, 151, 209, 0.1), 0 5px 15px rgba(48, 151, 209, 0.07);
+  cursor: pointer;
+}
+
 #main form.custom input {
   border: none;
   -webkit-box-shadow: none;

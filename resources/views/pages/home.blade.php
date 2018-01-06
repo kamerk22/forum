@@ -3,11 +3,31 @@
 @section('title', 'Page Title')
 
 @section('content')
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLong" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLong">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-md-6 col-xs-10 col-xs-offset-0 offset-4">
+        <button class="fab" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-plus" aria-hidden="true" ></i></button>
+        <div class="col-md-6 col-12 offset-md-4">
             <div class="search-wrapper">
                 <form class="form-inline custom">
-                    <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                    <label class="sr-only" for="inlineFormInputGroupUsername2">Search</label>
                     <div class="input-group mb-2 mr-sm-2 col-md-8">
                         <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
                                placeholder="Search Topics">
@@ -40,7 +60,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-10 col-md-9">
                             <h4>10 Kids Unaware of Their Halloween Costume</h4>
                             <p>It's one thing to subject yourself to a Halloween costume mishap because, hey, that's
                                 your prerogative.</p>
@@ -49,11 +69,15 @@
                                 <span>20 min ago</span>
                             </div>
                         </div>
-                        <div class="col-12 col-md-1">
-                            <div class="post-info">
-                                <div class="views">
-                                    <i class="fa fa-eye"></i>
-                                    <span>2000</span>
+                        <div class="col-12 col-md-2">
+                            <div class="post-info float-right">
+                                <div>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    &nbsp;<span>2000</span>
+                                </div>
+                                <div>
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    &nbsp;&nbsp;<span>20</span>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +104,7 @@
 
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-10 col-md-9">
                             <h4>What Instagram Ads Will Look Like</h4>
                             <p>Instagram offered a first glimpse at what its ads will look like in a blog post Thursday.
                                 The sample ad, which you can see below.</p>
@@ -89,11 +113,15 @@
                                 <span>30 min ago</span>
                             </div>
                         </div>
-                        <div class="col-12 col-md-1">
-                            <div class="post-info">
-                                <div class="views">
-                                    <i class="fa fa-eye"></i>
-                                    <span>2000</span>
+                        <div class="col-12 col-md-2">
+                            <div class="post-info float-right">
+                                <div>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    &nbsp;<span>1500</span>
+                                </div>
+                                <div>
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    &nbsp;&nbsp;<span>25</span>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +146,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-10 col-md-9">
                             <h4>The Future of Magazines Is on Tablets</h4>
                             <p>Eric Schmidt has seen the future of magazines, and it's on the tablet. At a Magazine
                                 Publishers Association.</p>
@@ -127,11 +155,15 @@
                                 <span>41 min ago</span>
                             </div>
                         </div>
-                        <div class="col-12 col-md-1">
-                            <div class="post-info">
-                                <div class="views">
-                                    <i class="fa fa-eye"></i>
-                                    <span>2000</span>
+                        <div class="col-12 col-md-2">
+                            <div class="post-info float-right">
+                                <div>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    &nbsp;<span>100</span>
+                                </div>
+                                <div>
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    &nbsp;&nbsp;<span>5</span>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +188,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-10 col-md-9">
                             <h4>Pinterest Now Worth $3.8 Billion</h4>
                             <p>Pinterest's valuation is closing in on $4 billion after its latest funding round of $225
                                 million, according to a report.</p>
@@ -165,11 +197,15 @@
                                 <span>55 min ago</span>
                             </div>
                         </div>
-                        <div class="col-12 col-md-1">
-                            <div class="post-info">
-                                <div class="views">
-                                    <i class="fa fa-eye"></i>
-                                    <span>2000</span>
+                        <div class="col-12 col-md-2">
+                            <div class="post-info float-right">
+                                <div>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    &nbsp;<span>105</span>
+                                </div>
+                                <div>
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    &nbsp;&nbsp;<span>1</span>
                                 </div>
                             </div>
                         </div>
@@ -201,4 +237,5 @@
             </ul>
         </div>
     </div>
+
 @endsection
