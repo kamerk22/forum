@@ -3,11 +3,11 @@
 @section('title', 'Page Title')
 
 @section('content')
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLong" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLong">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="row">
-        <button class="fab" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-plus" aria-hidden="true" ></i></button>
+        <button class="fab" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true" ></i></button>
         <div class="col-md-6 col-12 offset-md-4">
             <div class="search-wrapper">
                 <form class="form-inline custom">

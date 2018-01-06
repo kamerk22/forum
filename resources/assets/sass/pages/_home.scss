@@ -9,8 +9,18 @@
     height: 60px;
     border: none;
     color: #fff;
-    box-shadow: 0 15px 35px rgba(48, 151, 209, 0.1), 0 5px 15px rgba(48, 151, 209, 0.07);
+    box-shadow: 0 15px 35px rgba(48, 151, 209, 0.3), 0 5px 15px rgba(48, 151, 209, 0.08);
     cursor: pointer;
+    z-index: 999;
+    @include media-breakpoint-down(xs) {
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .fab:focus {
+    outline: none;
   }
   //.container-fluid {
   margin-left: 30px;
