@@ -9,7 +9,7 @@
     height: 60px;
     border: none;
     color: #fff;
-    box-shadow: 0 15px 35px rgba(48, 151, 209, 0.3), 0 5px 15px rgba(48, 151, 209, 0.08);
+    box-shadow: 0 15px 35px rgba(128, 0, 0, 0.3), 0 5px 15px rgba(128, 0, 0, 0.08);
     cursor: pointer;
     z-index: 999;
     @include media-breakpoint-down(xs) {
@@ -38,11 +38,50 @@
     }
 
     .btn-custom {
-      border: solid 1px #697683;
+      border: solid 1px $brand-primary;
       box-shadow: none;
-      background-color: #697683;
+      background-color: $brand-primary;
       color: #ffffff;
       font-size: 18px;
+    }
+  }
+  form.custom-modal {
+    input {
+      border: 1px solid #ced4da;
+      box-shadow: none;
+      background-color: #fafafa;
+      color: #363838;
+      font-size: 14px;
+      padding: 8px 19px;
+      height: 42px;
+    }
+
+    textarea {
+      background-color: #fafafa;
+      resize: none;
+      box-shadow: none;
+      border: 1px solid #ced4da;
+    }
+
+    .btn-custom {
+      border: solid 1px $brand-primary;
+      box-shadow: none;
+      background-color: $brand-primary;
+      color: #ffffff;
+      font-size: 18px;
+    }
+  }
+
+  .pagination {
+    .page-item.active {
+      .page-link {
+        background-color: $brand-primary;
+        border-color: $brand-primary;
+        color: #fff;
+      }
+    }
+    .page-link {
+      color: $brand-primary;
     }
   }
 
@@ -161,10 +200,6 @@
         bottom: 0;
       }
 
-    }
-
-    .red {
-      background: red;
     }
   }
 }

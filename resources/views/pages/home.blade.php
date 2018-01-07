@@ -3,47 +3,13 @@
 @section('title', 'Page Title')
 
 @section('content')
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{--include search and create post modal and fab template--}}
+    @include('layouts.create')
     <div class="row">
-        <button class="fab" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true" ></i></button>
-        <div class="col-md-6 col-12 offset-md-4">
-            <div class="search-wrapper">
-                <form class="form-inline custom">
-                    <label class="sr-only" for="inlineFormInputGroupUsername2">Search</label>
-                    <div class="input-group mb-2 mr-sm-2 col-md-8">
-                        <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
-                               placeholder="Search Topics">
-                        <button class="btn btn-custom" type="button"><i class="fa fa-search"></i></button>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 col ">
+        <div class="col-md-8 col order-md-1 order-2">
             <div class="post-wrapper">
                 <div class="post">
                     <div class="row">
-
                         <div class="col-2 col-md-1">
                             <div class="post-info">
                                 <div class="upvotes">
@@ -213,21 +179,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="post-wrapper">
-                <h4 class="sub-title">Categories</h4>
-                <div class="divline"></div>
-                <div class="sub-body">
-                    <ul>
-                        <li><a href="#">General</a><span class="badge badge-pill float-right">10</span></li>
-                        <li><a href="#">FAQs</a><span class="badge badge-pill float-right">2</span></li>
-                        <li><a href="#">Support</a><span class="badge badge-pill float-right">30</span></li>
-                        <li><a href="#">Trading for Money</a><span class="badge badge-pill float-right">2</span></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="col-md-4 order-1 order-md-2">
+            @component('components/categories')
+            @endcomponent
         </div>
-        <div class="col-6 offset-2 col-md-6 offset-md-0">
+        <div class="col-6 offset-2 col-md-6 offset-md-0 order-3">
             <ul class="pagination">
                 <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
                 <li class="page-item active"><a class="page-link" href="#">1</a></li>

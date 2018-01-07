@@ -12944,6 +12944,184 @@ a.text-dark:hover {
   clip: auto;
 }
 
+#brand-modal .modal-open {
+  overflow: hidden;
+}
+
+#brand-modal .modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-open #brand-modal .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#brand-modal .modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 0.5rem;
+  pointer-events: none;
+}
+
+.modal.fade #brand-modal .modal-dialog {
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -webkit-transform: translate(0, -25%);
+          transform: translate(0, -25%);
+}
+
+.modal.show #brand-modal .modal-dialog {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+#brand-modal .modal-dialog-centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: calc(100% - (0.5rem * 2));
+}
+
+#brand-modal .modal-content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0;
+}
+
+#brand-modal .modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+
+#brand-modal .modal-backdrop.fade {
+  opacity: 0;
+}
+
+#brand-modal .modal-backdrop.show {
+  opacity: 0.5;
+}
+
+#brand-modal .modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+#brand-modal .modal-header .close {
+  padding: 1rem;
+  margin: -1rem -1rem -1rem auto;
+}
+
+#brand-modal .modal-title {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+#brand-modal .modal-body {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 1rem;
+}
+
+#brand-modal .modal-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 1rem;
+  border-top: none !important;
+}
+
+#brand-modal .modal-footer > :not(:first-child) {
+  margin-left: .25rem;
+}
+
+#brand-modal .modal-footer > :not(:last-child) {
+  margin-right: .25rem;
+}
+
+#brand-modal .modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+@media (min-width: 576px) {
+  #brand-modal .modal-dialog {
+    max-width: 500px;
+    margin: 1.75rem auto;
+  }
+
+  #brand-modal .modal-dialog-centered {
+    min-height: calc(100% - (1.75rem * 2));
+  }
+
+  #brand-modal .modal-sm {
+    max-width: 300px;
+  }
+}
+
+#brand-modal .btn-brand {
+  background: #800000;
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  #brand-modal .modal-lg {
+    max-width: 800px;
+  }
+}
+
 #main {
   margin-left: 30px;
   margin-right: 30px;
@@ -12953,14 +13131,14 @@ a.text-dark:hover {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background: #3097D1;
+  background: #800000;
   border-radius: 50%;
   width: 60px;
   height: 60px;
   border: none;
   color: #fff;
-  -webkit-box-shadow: 0 15px 35px rgba(48, 151, 209, 0.3), 0 5px 15px rgba(48, 151, 209, 0.08);
-          box-shadow: 0 15px 35px rgba(48, 151, 209, 0.3), 0 5px 15px rgba(48, 151, 209, 0.08);
+  -webkit-box-shadow: 0 15px 35px rgba(128, 0, 0, 0.3), 0 5px 15px rgba(128, 0, 0, 0.08);
+          box-shadow: 0 15px 35px rgba(128, 0, 0, 0.3), 0 5px 15px rgba(128, 0, 0, 0.08);
   cursor: pointer;
   z-index: 999;
 }
@@ -12990,12 +13168,50 @@ a.text-dark:hover {
 }
 
 #main form.custom .btn-custom {
-  border: solid 1px #697683;
+  border: solid 1px #800000;
   -webkit-box-shadow: none;
           box-shadow: none;
-  background-color: #697683;
+  background-color: #800000;
   color: #ffffff;
   font-size: 18px;
+}
+
+#main form.custom-modal input {
+  border: 1px solid #ced4da;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #fafafa;
+  color: #363838;
+  font-size: 14px;
+  padding: 8px 19px;
+  height: 42px;
+}
+
+#main form.custom-modal textarea {
+  background-color: #fafafa;
+  resize: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid #ced4da;
+}
+
+#main form.custom-modal .btn-custom {
+  border: solid 1px #800000;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #800000;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+#main .pagination .page-item.active .page-link {
+  background-color: #800000;
+  border-color: #800000;
+  color: #fff;
+}
+
+#main .pagination .page-link {
+  color: #800000;
 }
 
 #main .search-wrapper {
@@ -13022,7 +13238,7 @@ a.text-dark:hover {
 }
 
 #main .post-wrapper .post-info .upvotes .vote-up {
-  color: #3097D1;
+  color: #800000;
 }
 
 #main .post-wrapper .post-info .upvotes .vote-down {
@@ -13066,7 +13282,7 @@ a.text-dark:hover {
 }
 
 #main .post-wrapper .sub-body ul .badge {
-  background-color: #3097D1;
+  background-color: #800000;
   font-size: 12px;
   color: #ffffff;
   margin-top: 7px;
@@ -13115,10 +13331,6 @@ a.text-dark:hover {
   left: 0;
   right: 0;
   bottom: 0;
-}
-
-#main .post-wrapper .red {
-  background: red;
 }
 
 @media (max-width: 575.99px) {
