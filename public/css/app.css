@@ -13122,6 +13122,288 @@ a.text-dark:hover {
   }
 }
 
+#reaction .text-desc,
+#reaction [class*="reaction-"] {
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#reaction .field-reactions {
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#reaction .field-reactions:checked:focus ~ .text-desc {
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#reaction .field-reactions:focus ~ .text-desc {
+  clip: auto;
+  overflow: visible;
+  opacity: 1;
+}
+
+#reaction .box:hover [class*="reaction-"],
+#reaction .field-reactions:checked ~ [class*="reaction-"] {
+  clip: auto;
+  overflow: visible;
+  opacity: 1;
+}
+
+#reaction .main-title {
+  background: #3a5795;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#reaction .text-desc {
+  font-weight: normal;
+  text-align: center;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  white-space: nowrap;
+  font-size: 13px;
+  width: 100%;
+}
+
+#reaction [class*="reaction-"] {
+  border: none;
+  background-image: url("/img/reaction.png");
+  background-color: transparent;
+  display: block;
+  cursor: pointer;
+  height: 48px;
+  position: absolute;
+  width: 48px;
+  z-index: 11;
+  top: -28;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  outline: none;
+  will-change: transform;
+  opacity: 0;
+}
+
+#reaction .box {
+  position: relative;
+}
+
+#reaction .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  visibility: hidden;
+}
+
+#reaction .field-reactions:focus ~ .label-reactions {
+  border-color: rgba(88, 144, 255, 0.3);
+}
+
+#reaction .field-reactions:checked:focus ~ .label-reactions {
+  border-color: transparent;
+}
+
+#reaction .label-reactions {
+  background: url("/img/like.png") no-repeat 0 0;
+  border: 2px dotted transparent;
+  display: block;
+  height: 40px;
+  margin: 0 auto;
+  width: 42px;
+  color: transparent;
+  cursor: pointer;
+}
+
+#reaction .toolbox {
+  background: #fff;
+  height: 52px;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.15);
+  width: 300px;
+  border-radius: 40px;
+  top: -50px;
+  left: 0;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s;
+}
+
+#reaction .legend-reaction {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  line-height: 20px;
+  max-width: 100%;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 6px;
+  -webkit-transition: opacity 50ms ease;
+  transition: opacity 50ms ease;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: -28px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+#reaction .box:hover [class*="reaction-"] {
+  -webkit-transform: scale(0.8) translateY(-65px);
+          transform: scale(0.8) translateY(-65px);
+}
+
+#reaction .box:hover [class*="reaction-"]:hover,
+#reaction .box:hover [class*="reaction-"]:focus {
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-transform: scale(1) translateY(-60px);
+          transform: scale(1) translateY(-60px);
+}
+
+#reaction .box:hover [class*="reaction-"]:hover .legend-reaction,
+#reaction .box:hover [class*="reaction-"]:focus .legend-reaction {
+  opacity: 1;
+}
+
+#reaction .box:hover .toolbox {
+  opacity: 1;
+  visibility: visible;
+}
+
+#reaction .box:hover .reaction-love {
+  -webkit-transition-delay: 0.06s;
+          transition-delay: 0.06s;
+}
+
+#reaction .box:hover .reaction-haha {
+  -webkit-transition-delay: 0.09s;
+          transition-delay: 0.09s;
+}
+
+#reaction .box:hover .reaction-wow {
+  -webkit-transition-delay: 0.12s;
+          transition-delay: 0.12s;
+}
+
+#reaction .box:hover .reaction-sad {
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+#reaction .box:hover .reaction-angry {
+  -webkit-transition-delay: 0.18s;
+          transition-delay: 0.18s;
+}
+
+#reaction .field-reactions:checked ~ [class*="reaction-"] {
+  -webkit-transform: scale(0.8) translateY(-65px);
+          transform: scale(0.8) translateY(-65px);
+}
+
+#reaction .field-reactions:checked ~ [class*="reaction-"]:hover,
+#reaction .field-reactions:checked ~ [class*="reaction-"]:focus {
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -webkit-transform: scale(1) translateY(-60px);
+          transform: scale(1) translateY(-60px);
+}
+
+#reaction .field-reactions:checked ~ [class*="reaction-"]:hover .legend-reaction,
+#reaction .field-reactions:checked ~ [class*="reaction-"]:focus .legend-reaction {
+  opacity: 1;
+}
+
+#reaction .field-reactions:checked ~ .toolbox {
+  opacity: 1;
+  visibility: visible;
+}
+
+#reaction .field-reactions:checked ~ .overlay {
+  visibility: visible;
+}
+
+#reaction .field-reactions:checked ~ .reaction-love {
+  -webkit-transition-delay: 0.03s;
+          transition-delay: 0.03s;
+}
+
+#reaction .field-reactions:checked ~ .reaction-haha {
+  -webkit-transition-delay: 0.09s;
+          transition-delay: 0.09s;
+}
+
+#reaction .field-reactions:checked ~ .reaction-wow {
+  -webkit-transition-delay: 0.12s;
+          transition-delay: 0.12s;
+}
+
+#reaction .field-reactions:checked ~ .reaction-sad {
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+#reaction .field-reactions:checked ~ .reaction-angry {
+  -webkit-transition-delay: 0.18s;
+          transition-delay: 0.18s;
+}
+
+#reaction .reaction-like {
+  left: 0;
+  background-position: 0 -144px;
+}
+
+#reaction .reaction-love {
+  background-position: 0 -192px;
+  left: 50px;
+}
+
+#reaction .reaction-haha {
+  background-position: 0 -96px;
+  left: 100px;
+}
+
+#reaction .reaction-wow {
+  background-position: 0 -288px;
+  left: 150px;
+}
+
+#reaction .reaction-sad {
+  background-position: 0 -240px;
+  left: 200px;
+}
+
+#reaction .reaction-angry {
+  left: 250px;
+}
+
 #main {
   margin-left: 30px;
   margin-right: 30px;
@@ -13237,11 +13519,15 @@ a.text-dark:hover {
   margin: -5px;
 }
 
-#main .post-wrapper .post-info .upvotes .vote-up {
-  color: #800000;
+#main .post-wrapper .post-info .upvotes .up {
+  color: #800000 !important;
 }
 
-#main .post-wrapper .post-info .upvotes .vote-down {
+#main .post-wrapper .post-info .upvotes .down {
+  color: #ccc;
+}
+
+#main .post-wrapper .post-info .upvotes .vote {
   color: #ccc;
 }
 
@@ -13258,13 +13544,6 @@ a.text-dark:hover {
 
 #main .post-wrapper .post-info .views span {
   display: inline-block;
-}
-
-#main .post-wrapper .divline {
-  padding: 0 !important;
-  height: 1px;
-  line-height: 1px;
-  border-bottom: solid 1px #f1f1f1;
 }
 
 #main .post-wrapper .post:last-child {
@@ -13305,6 +13584,10 @@ a.text-dark:hover {
   padding-top: 20px;
 }
 
+#main .post-wrapper .username p {
+  font-size: 14px;
+}
+
 #main .post-wrapper .post {
   padding: 20px 0px;
 }
@@ -13333,10 +13616,48 @@ a.text-dark:hover {
   bottom: 0;
 }
 
+#main .divline {
+  padding: 0 !important;
+  height: 1px;
+  line-height: 1px;
+  border-bottom: solid 1px #f1f1f1;
+}
+
+#main .brand-color {
+  color: #800000;
+}
+
 @media (max-width: 575.99px) {
   #main {
     margin-left: 0;
     margin-right: 0;
   }
+}
+
+.post-feed i.fa {
+  font-size: 25px !important;
+}
+
+.bg-sec {
+  background: #fafafa;
+}
+
+.comments {
+  margin-top: -25px;
+  background: #F2F2F2;
+  -webkit-box-shadow: 0 1px 2px #c9cccd;
+          box-shadow: 0 1px 2px #c9cccd;
+}
+
+.comment-wrapper {
+  background-color: #ffffff;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 2px #c9cccd;
+  box-shadow: 0 1px 2px #c9cccd;
+  margin-bottom: 20px;
+}
+
+.comment-wrapper .post-comment {
+  padding: 10px 20px;
 }
 

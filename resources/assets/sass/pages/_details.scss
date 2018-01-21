@@ -1,0 +1,26 @@
+.post-feed {
+  i.fa {
+    font-size: 25px !important;
+  }
+}
+
+.bg-sec {
+  background: #fafafa;
+}
+
+.comments {
+  margin-top: -25px;
+  background: #F2F2F2;
+  box-shadow: 0 1px 2px #c9cccd;
+}
+.comment-wrapper {
+  background-color: #ffffff;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 2px #c9cccd;
+  box-shadow: 0 1px 2px #c9cccd;
+  margin-bottom: 20px;
+
+  .post-comment {
+    padding: 10px 20px;
+  }
+}

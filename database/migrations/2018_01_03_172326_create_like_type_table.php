@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use App\Utils\AppConstant;
 
-class CreateUsersTable extends Migration
+class CreateLikeTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('like_type', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('like_type');
+            $table->string('icon')->nullable();
             $table->tinyInteger('status')->default(AppConstant::STATUS_ACTIVE);
             $table->timestamps();
         });
@@ -32,6 +30,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('like_type');
     }
 }

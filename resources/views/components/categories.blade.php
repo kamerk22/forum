@@ -3,10 +3,10 @@
     <div class="divline"></div>
     <div class="sub-body">
         <ul>
-            <li><a href="#">General</a><span class="badge badge-pill float-right">10</span></li>
-            <li><a href="#">FAQs</a><span class="badge badge-pill float-right">2</span></li>
-            <li><a href="#">Support</a><span class="badge badge-pill float-right">30</span></li>
-            <li><a href="#">Trading for Money</a><span class="badge badge-pill float-right">2</span></li>
+            @foreach($categories as $data)
+                <li><a href="{{url('category/'.$data->slug)}}">{{$data->name}}</a><span class="badge badge-pill float-right">{{$data->blog_count->count()}}</span></li>
+            @endforeach
+
         </ul>
     </div>
 </div>

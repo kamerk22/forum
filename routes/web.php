@@ -12,9 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('pages.home');
+    return view('welcome');
 });
 
-Route::get('/details', function () {
-    return view('pages.details');
-});
+Route::resource('category', 'CategoryController', ['except' => [
+    'create', 'update'
+]]);
+Route::resource('posts', 'PostController', ['except' => [
+    'create', 'update'
+]]);
+Route::resource('comments', 'CommentController', ['except' => [
+    'create', 'update'
+]]);
+
+Route::resource('like', 'LikeController', ['except' => [
+    'create', 'update', 'index', 'show', 'edit', 'destroy'
+]]);
+Route::resource('upvote', 'UpvoteController', ['except' => [
+    'create', 'update', 'index', 'show', 'edit', 'destroy'
+]]);

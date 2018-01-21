@@ -9,36 +9,36 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="custom-modal">
+                <form class="custom-modal" method="post" action="{{route('posts.store')}}">
+                    {{csrf_field()}}
                     <div class="modal-body">
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="title">Title</label>
-                                <input type="text" class="form-control" id="title" placeholder="Title">
+                                <input type="text" class="form-control" id="title" placeholder="Title" name="title">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="category">Category</label>
-                                <select id="category" class="form-control">
-                                    <option selected>General</option>
-                                    <option>FAQs</option>
-                                    <option>Support</option>
-                                    <option>Trading for Money</option>
+                                <select id="category" class="form-control" name="category">
+                                @foreach($categories as $data)
+                                    <option  value="{{$data->id}}">{{$data->name}}</option>
+                                @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col">
-                                <label for="description">Description</label>
-                                <textarea class="form-control" id="description" rows="5"
-                                          placeholder="Description"></textarea>
+                                <label for="body">Description</label>
+                                <textarea class="form-control" id="body" rows="5"
+                                          placeholder="Description" name="body"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-brand">Save changes</button>
+                        <button type="submit" class="btn btn-brand">Save changes</button>
                     </div>
                 </form>
             </div>

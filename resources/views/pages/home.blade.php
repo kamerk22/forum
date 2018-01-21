@@ -4,194 +4,121 @@
 
 @section('content')
     {{--include search and create post modal and fab template--}}
-    @include('layouts.create')
+    @include('layouts.create' , ['categories' => $data["categories"]])
     <div class="row">
         <div class="col-md-8 col order-md-1 order-2">
             <div class="post-wrapper">
-                <div class="post">
-                    <div class="row">
-                        <div class="col-2 col-md-1">
-                            <div class="post-info">
-                                <div class="upvotes">
-                                    <div class="upvotes-container">
-                                        <a href="" class="vote-up">
-                                            <i class="fa fa-3x fa-angle-up"></i>
-                                        </a>
-                                        <span>20</span>
-                                        <a href="" class="vote-down">
-                                            <i class="fa fa-3x fa-angle-down"></i>
-                                        </a>
+                @if(count($data['posts']) <= 0)
+                    <h1 class="text-center p-5">No Data</h1>
+                @endif
+                @foreach($data["posts"] as $newdata)
+                    <div class="post" id="{{$newdata->id}}">
+                        <div class="row">
+                            <div class="col-2 col-md-1">
+                                <div class="post-info">
+                                    <div class="upvotes">
+                                        <div class="upvotes-container">
+                                            @if($newdata->ownUpvote)
+                                                @if($newdata->ownUpvote->status == 1)
+                                                    <a href="#!" class="vote vote-up up" id="1">
+                                                        <i class="fa fa-3x fa-angle-up"></i>
+                                                    </a>
+                                                @else
+                                                    <a href="#!" class="vote vote-up" id="1">
+                                                        <i class="fa fa-3x fa-angle-up"></i>
+                                                    </a>
+                                                @endif
+                                                <span id="upvote-count">{{$newdata->upvotes->where('status', 1)->count() - $newdata->upvotes->where('status', 2)->count()}}</span>
+                                                @if($newdata->ownUpvote->status == 2)
+                                                    <a href="#!" class="vote vote-down up" id="2">
+                                                        <i class="fa fa-3x fa-angle-down"></i>
+                                                    </a>
+                                                @else
+                                                    <a href="#!" class="vote vote-down" id="2">
+                                                        <i class="fa fa-3x fa-angle-down"></i>
+                                                    </a>
+                                                @endif
+                                            @else
+                                                <a href="#!" class="vote vote-up" id="1">
+                                                    <i class="fa fa-3x fa-angle-up"></i>
+                                                </a>
+                                                <span id="upvote-count">{{$newdata->upvotes->where('status', 1)->count() - $newdata->upvotes->where('status', 2)->count()}}</span>
+                                                <a href="#!" class="vote vote-down" id="2">
+                                                    <i class="fa fa-3x fa-angle-down"></i>
+                                                </a>
+                                            @endif
+                                        </div>
+
                                     </div>
-
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-10 col-md-9">
-                            <h4>10 Kids Unaware of Their Halloween Costume</h4>
-                            <p>It's one thing to subject yourself to a Halloween costume mishap because, hey, that's
-                                your prerogative.</p>
-                            <div class="views">
-                                <i class="fa fa-clock-o"></i>
-                                <span>20 min ago</span>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2">
-                            <div class="post-info float-right">
-                                <div>
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    &nbsp;<span>2000</span>
-                                </div>
-                                <div>
-                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
-                                    &nbsp;&nbsp;<span>20</span>
+                            <div class="col-10 col-md-9">
+                                <h4><a href="{{ url('posts/'.$newdata->id) }}"> {{mb_substr($newdata->title, 0, 100)}}
+                                        ...</a></h4>
+                                <p>{{mb_substr($newdata->body, 0, 150)}}...</p>
+                                <div class="views">
+                                    <i class="fa fa-clock-o"></i>
+                                    <span>{{\Carbon\Carbon::parse($newdata->created_at)->diffForHumans()}}</span>
                                 </div>
                             </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="divline"></div>
-                <div class="post">
-                    <div class="row">
-                        <div class="col-2 col-md-1">
-                            <div class="post-info">
-                                <div class="upvotes">
-                                    <div class="upvotes-container">
-                                        <a href="" class="vote-down">
-                                            <i class="fa fa-3x fa-angle-up"></i>
-                                        </a>
-                                        <span>2</span>
-                                        <a href="" class="vote-down">
-                                            <i class="fa fa-3x fa-angle-down"></i>
-                                        </a>
+                            <div class="col-12 col-md-2">
+                                <div class="post-info float-right">
+                                    <div>
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        &nbsp;<span>{{$newdata->view_count}}</span>
                                     </div>
+                                    <div>
+                                        <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                        &nbsp;&nbsp;<span>{{$newdata->comments->count()}}</span>
+                                    </div>
+                                </div>
+                            </div>
 
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-10 col-md-9">
-                            <h4>What Instagram Ads Will Look Like</h4>
-                            <p>Instagram offered a first glimpse at what its ads will look like in a blog post Thursday.
-                                The sample ad, which you can see below.</p>
-                            <div class="views">
-                                <i class="fa fa-clock-o"></i>
-                                <span>30 min ago</span>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2">
-                            <div class="post-info float-right">
-                                <div>
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    &nbsp;<span>1500</span>
-                                </div>
-                                <div>
-                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
-                                    &nbsp;&nbsp;<span>25</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="divline"></div>
-                <div class="post">
-                    <div class="row">
-                        <div class="col-2 col-md-1">
-                            <div class="post-info">
-                                <div class="upvotes">
-                                    <div class="upvotes-container">
-                                        <a href="" class="vote-down">
-                                            <i class="fa fa-3x fa-angle-up"></i>
-                                        </a>
-                                        <span>0</span>
-                                        <a href="" class="vote-down">
-                                            <i class="fa fa-3x fa-angle-down"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-10 col-md-9">
-                            <h4>The Future of Magazines Is on Tablets</h4>
-                            <p>Eric Schmidt has seen the future of magazines, and it's on the tablet. At a Magazine
-                                Publishers Association.</p>
-                            <div class="views">
-                                <i class="fa fa-clock-o"></i>
-                                <span>41 min ago</span>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2">
-                            <div class="post-info float-right">
-                                <div>
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    &nbsp;<span>100</span>
-                                </div>
-                                <div>
-                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
-                                    &nbsp;&nbsp;<span>5</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="divline"></div>
-                <div class="post">
-                    <div class="row">
-                        <div class="col-2 col-md-1">
-                            <div class="post-info">
-                                <div class="upvotes">
-                                    <div class="upvotes-container">
-                                        <a href="" class="vote-up">
-                                            <i class="fa fa-3x fa-angle-up"></i>
-                                        </a>
-                                        <span>10</span>
-                                        <a href="" class="vote-down">
-                                            <i class="fa fa-3x fa-angle-down"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-10 col-md-9">
-                            <h4>Pinterest Now Worth $3.8 Billion</h4>
-                            <p>Pinterest's valuation is closing in on $4 billion after its latest funding round of $225
-                                million, according to a report.</p>
-                            <div class="views">
-                                <i class="fa fa-clock-o"></i>
-                                <span>55 min ago</span>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2">
-                            <div class="post-info float-right">
-                                <div>
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    &nbsp;<span>105</span>
-                                </div>
-                                <div>
-                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
-                                    &nbsp;&nbsp;<span>1</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <div class="divline"></div>
+                @endforeach
             </div>
         </div>
         <div class="col-md-4 order-1 order-md-2">
-            @component('components/categories')
+            @component('components/categories', ['categories' => $data["categories"]])
             @endcomponent
         </div>
         <div class="col-6 offset-2 col-md-6 offset-md-0 order-3">
             <ul class="pagination">
-                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                {{ $data["posts"]->links('vendor.pagination.bootstrap-4') }}
             </ul>
         </div>
     </div>
+@section('js')
+    <script>
+        $(".vote").click(function () {
+            var self = this;
+            console.log($(self).parent().find(".vote"))
+            var data = {
+                "status": this.id,
+                "post_id": $(self).closest(".post").attr('id'),
+                "_token": "{{ csrf_token() }}"
+            }
 
+            $.ajax({
+                type: 'POST',
+                url: "{!! route('upvote.store') !!}",
+                data: data,
+                dataType: "json",
+                success: function (resultData) {
+                    $(self).parent().find("#upvote-count").text(resultData.count);
+                    if (resultData.class == 0) {
+                        $(self).parent().find(".vote").removeClass('up');
+                    } else {
+                        $(self).addClass('up')
+                    }
+                },
+                error: function (resultData) {
+
+                }
+            });
+        });
+    </script>
+@endsection
 @endsection

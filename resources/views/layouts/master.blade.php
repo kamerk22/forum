@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,9 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" type="text/css">
     <link href="{{  asset('css/app.css') }}" rel="stylesheet" type="text/css">
+
 
     <style>
         #main {
@@ -31,5 +33,6 @@
 </section>
 
 <script src="{{ asset('js/app.js') }}"></script>
+@yield('js')
 </body>
 </html>
